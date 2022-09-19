@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Make sure one argument is passed
-[[ $# == 0 ]] && echo "Usage: $0 <hash_directory>" && exit 1
+[[ $# == 0 ]] && echo "Usage: $0 <hash_directory>" >&2 && exit 1
 
 # Get directory for hashes, exit if not a directory
 hash_directory=$1
-[[ ! -d $hash_directory ]] && echo "$hash_directory is not a directory" && exit 1
+[[ ! -d $hash_directory ]] && echo "$hash_directory is not a directory" >&2 && exit 1
 
 # Read from stdin
 text=$(</dev/stdin)
